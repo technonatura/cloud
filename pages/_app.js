@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 function MyApp({ Component, pageProps }) {
   const colors = {
@@ -10,10 +11,22 @@ function MyApp({ Component, pageProps }) {
       700: "#2a69ac",
     },
   };
-  const theme = extendTheme({ colors });
+  const theme = extendTheme({
+    colors,
+    styles: {
+      global: (props) => ({
+        body: {
+          fontFamily: "body",
+          color: mode("gray.800", "whiteAlpha.900")(props),
+          bg: mode("white", "gray.800")(props),
+          lineHeight: "base",
+        },
+      }),
+    },
+  });
 
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme} b>
       <Component {...pageProps} />
     </ChakraProvider>
   );

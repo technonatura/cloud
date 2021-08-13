@@ -13,7 +13,11 @@ import { FiExternalLink } from "react-icons/fi";
 
 export default function App() {
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={0}>
+    <SimpleGrid
+      bg={useColorModeValue("gray.50", "gray.900")}
+      columns={{ base: 1, md: 2 }}
+      spacing={0}
+    >
       <Flex bg="brand.400">
         <Image
           src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
@@ -21,9 +25,7 @@ export default function App() {
           fit="cover"
           w="full"
           h={{ base: 64, md: "full" }}
-          bg="gray.100"
           loading="lazy"
-          opacity={0.4}
         />
       </Flex>
       <Flex
@@ -81,7 +83,7 @@ export default function App() {
               bg: useColorModeValue("green.500", "green.500"),
             }}
           >
-            Visit the Help Centre
+            Visit the Documentation
             <Icon as={FiExternalLink} ml={2} />
           </chakra.a>
         </Box>
