@@ -40,20 +40,28 @@ export default function CallToActionWithAnnotation() {
             alignSelf={"center"}
             position={"relative"}
           >
-            <Button
-              colorScheme={"green"}
-              bg={"green.400"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "green.500",
-              }}
+            <a
+              href="https://app.technonatura.vercel.app/cloud"
+              target="_blank"
+              rel="noopener"
             >
-              Get Started
-            </Button>
+              <Button
+                colorScheme={"green"}
+                bg={"green.400"}
+                rounded={"full"}
+                px={6}
+                _hover={{
+                  bg: "green.500",
+                }}
+              >
+                Get Started
+              </Button>{" "}
+            </a>
+
             <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
               Learn more
             </Button>
+
             <Box>
               <Icon
                 as={Arrow}

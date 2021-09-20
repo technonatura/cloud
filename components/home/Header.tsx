@@ -85,7 +85,7 @@ function Header() {
     </Box>
   );
 
-  const Section = (props) => {
+  const Section = (props: any) => {
     const ic = useColorModeValue("brand.600", "brand.50");
     const hbg = useColorModeValue("gray.50", "brand.400");
     const tcl = useColorModeValue("gray.900", "gray.50");
@@ -124,7 +124,7 @@ function Header() {
     );
   };
 
-  const Features = (props) => {
+  const Features = (props: any) => {
     const hbg = useColorModeValue("gray.50", "brand.400");
     const hbgh = useColorModeValue("gray.100", "brand.500");
     const tcl = useColorModeValue("gray.900", "gray.50");
@@ -371,30 +371,9 @@ function Header() {
                 >
                   Products
                 </Button>
-                <Button
-                  bg={bg}
-                  color="gray.500"
-                  display="inline-flex"
-                  alignItems="center"
-                  fontSize="md"
-                  _hover={{ color: cl }}
-                  _focus={{ boxShadow: "none" }}
-                >
-                  Docs
-                </Button>
               </HStack>
             </Flex>
             <Flex justify="flex-end" align="center" color="gray.400">
-              {/* {ContributeButton} */}
-              <IconButton
-                size="md"
-                fontSize="lg"
-                aria-label={`Switch to ${text} mode`}
-                variant="ghost"
-                color="current"
-                ml={{ base: "0", md: "3" }}
-                icon={<FaSearch />}
-              />
               <IconButton
                 size="md"
                 fontSize="lg"
@@ -405,6 +384,8 @@ function Header() {
                 onClick={toggleMode}
                 icon={<SwitchIcon />}
               />
+              {ContributeButton}
+
               <IconButton
                 display={{ base: "flex", md: "none" }}
                 aria-label="Open menu"

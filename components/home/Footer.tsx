@@ -10,6 +10,7 @@ import {
   Image,
   Flex,
   Link,
+  Icon,
 } from "@chakra-ui/react";
 import {
   IoLogoGitlab,
@@ -17,8 +18,8 @@ import {
   IoLogoBitbucket,
   IoLogoDiscord,
 } from "react-icons/io5";
-import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
+import { GrStatusGood } from "react-icons/gr";
 
 const SocialButton = ({
   children,
@@ -54,6 +55,45 @@ const SocialButton = ({
 };
 
 export default function Footer() {
+  const StatusButton = (
+    <Box
+      display={{ base: "none", md: "flex" }}
+      alignItems="center"
+      as="a"
+      aria-label="Sponsor Choc UI on Open Collective"
+      href={""}
+      target="_blank"
+      rel="noopener noreferrer"
+      bg={useColorModeValue("gray.50", "gray.700")}
+      borderWidth="1px"
+      borderColor={useColorModeValue("gray.200", "gray.600")}
+      px="1em"
+      minH="36px"
+      rounded="md"
+      fontSize="sm"
+      color={useColorModeValue("green.400", "gray.400")}
+      outline="0"
+      transition="all 0.3s"
+      _hover={{
+        bg: useColorModeValue("gray.100", "gray.800"),
+        borderColor: useColorModeValue("gray.300", "gray.700"),
+        color: useColorModeValue("green.500", "gray.500"),
+      }}
+      _active={{
+        borderColor: "gray.200",
+      }}
+      _focus={{
+        boxShadow: "outline",
+      }}
+      ml={5}
+    >
+      Status:
+      <Box as="strong" ml={1} lineHeight="inherit" fontWeight="semibold">
+        All systems normal
+      </Box>
+    </Box>
+  );
+
   return (
     <>
       <Box
@@ -71,6 +111,9 @@ export default function Footer() {
             <Text color={useColorModeValue("gray.600", "gray.500")}>
               © 2021 Aldhanekaa
             </Text>
+            <Stack direction={"row"} spacing={6}>
+              {StatusButton}
+            </Stack>
             <Stack direction={"row"} spacing={6}>
               <SocialButton
                 label={"Gitlab"}
